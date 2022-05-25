@@ -25,14 +25,18 @@ namespace WinFormsHW2
 
         static IEnumerable<string> ChunksUpto(string str, int maxChunkSize)
         {
-            for (int i = 0; i < str.Length; i += maxChunkSize)
-                yield return str.Substring(i, Math.Min(maxChunkSize, str.Length - i));
+            for (int i = str.Length - 1; i >= 0; i -= maxChunkSize)
+            {
+                int startIndex = i - maxChunkSize + 1;
+                yield return str.Substring(startIndex < 0 ? 0 : startIndex, startIndex < 0 ? startIndex + maxChunkSize :  maxChunkSize);
+            }
         }
 
         private string DivideString(string text, int chunkSize, string divider)
         {
-            var chunks = ChunksUpto(text.Replace(divider, String.Empty), chunkSize);
-            return String.Join(divider, chunks);
+            var parts = text.Split('.');
+            var chunks = ChunksUpto(parts[0].Replace(divider, String.Empty), chunkSize).Reverse();
+            return String.Join(divider, chunks) + (parts.Length != 1 ? '.' + parts[1] : "");
         
         }
 
@@ -90,7 +94,12 @@ namespace WinFormsHW2
                 {
                     case "del":
                         if(tbox_Current.Text.Length != 0) 
-                            tbox_Current.Text = tbox_Current.Text.Substring(0, tbox_Current.Text.Length - 1);
+                            tbox_Current.Text = tbox_Current.Text.Substring(0, 
+                                tbox_Current.Text.Length - 1);
+
+                        if(tbox_Current.Text.Length != 0 && tbox_Current.Text.Last() == ',')
+                            goto case "del";
+
                         return;
                     case "²":
                         tbox_Current.Text = Convert.ToString(current* current);
@@ -147,8 +156,17 @@ namespace WinFormsHW2
 
         private void tbox_Current_TextChanged(object sender, EventArgs e)
         {
-            while (TextRenderer.MeasureText(tbox_Current.Text + " ", tbox_Current.Font).Width > tbox_Current.Width)
-                tbox_Current.Font = new Font("Segoe UI", tbox_Current.Font.Size - 1.6f, FontStyle.Bold);
+            if (TextRenderer.MeasureText(tbox_Current.Text + "  ", tbox_Current.Font).Width > tbox_Current.Width)
+                do
+                {
+                    tbox_Current.Font = new Font("Segoe UI", tbox_Current.Font.Size - .1f, FontStyle.Bold);
+                }
+                while (TextRenderer.MeasureText(tbox_Current.Text + " ", tbox_Current.Font).Width > tbox_Current.Width);
+            else
+                while (TextRenderer.MeasureText(" ", tbox_Current.Font).Height < tbox_Current.Height - 10
+                    && TextRenderer.MeasureText(tbox_Current.Text + "  ", tbox_Current.Font).Width < tbox_Current.Width)
+                    tbox_Current.Font = new Font("Segoe UI", tbox_Current.Font.Size + .1f, FontStyle.Bold);
+
         }
     }
 }

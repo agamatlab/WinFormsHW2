@@ -89,5 +89,34 @@ namespace WFHW2._2
 
             MessageBox.Show("Data Successfully Loaded");
         }
+
+        private void lbl_Exit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        bool dragging = false;
+        Point offset;
+        Point startPoint = new Point(0, 0);
+
+        private void pnl_Top_MouseDown(object sender, MouseEventArgs e)
+        {
+            dragging = true;
+            startPoint = new Point(e.X, e.Y);
+        }
+
+        private void pnl_Top_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - startPoint.X, p.Y - startPoint.Y);
+            }
+        }
+
+        private void pnl_Top_MouseUp(object sender, MouseEventArgs e)
+        {
+            dragging=false;
+        }
     }
 }
