@@ -53,6 +53,7 @@
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +61,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Location = new System.Drawing.Point(12, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 28);
             this.label1.TabIndex = 0;
@@ -90,13 +91,14 @@
             this.tbox_Current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.tbox_Current.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tbox_Current.ForeColor = System.Drawing.Color.White;
-            this.tbox_Current.Location = new System.Drawing.Point(12, 104);
+            this.tbox_Current.Location = new System.Drawing.Point(12, 89);
             this.tbox_Current.MaxLength = 32765;
             this.tbox_Current.Multiline = true;
             this.tbox_Current.Name = "tbox_Current";
             this.tbox_Current.ReadOnly = true;
             this.tbox_Current.Size = new System.Drawing.Size(410, 78);
             this.tbox_Current.TabIndex = 4;
+            this.tbox_Current.Text = "0";
             this.tbox_Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbox_Current.WordWrap = false;
             this.tbox_Current.TextChanged += new System.EventHandler(this.tbox_Current_TextChanged);
@@ -104,7 +106,7 @@
             // lbl_Previous
             // 
             this.lbl_Previous.ForeColor = System.Drawing.Color.Silver;
-            this.lbl_Previous.Location = new System.Drawing.Point(12, 72);
+            this.lbl_Previous.Location = new System.Drawing.Point(12, 57);
             this.lbl_Previous.Name = "lbl_Previous";
             this.lbl_Previous.Size = new System.Drawing.Size(410, 26);
             this.lbl_Previous.TabIndex = 5;
@@ -112,17 +114,17 @@
             // 
             // button10
             // 
-            this.button10.BackColor = System.Drawing.Color.White;
+            this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button10.FlatAppearance.BorderSize = 0;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Image = global::WinFormsHW2.Properties.Resources.backspace_125px1;
-            this.button10.Location = new System.Drawing.Point(323, 216);
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
+            this.button10.Location = new System.Drawing.Point(323, 173);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(100, 70);
+            this.button10.Size = new System.Drawing.Size(100, 34);
             this.button10.TabIndex = 14;
             this.button10.Tag = "del";
             this.button10.UseVisualStyleBackColor = false;
@@ -398,6 +400,7 @@
             this.button18.TabIndex = 31;
             this.button18.Tag = ".";
             this.button18.UseVisualStyleBackColor = false;
+            this.button18.Click += new System.EventHandler(this.Operator_Click);
             // 
             // button19
             // 
@@ -430,7 +433,7 @@
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(100, 70);
             this.button20.TabIndex = 29;
-            this.button20.Tag = "+=";
+            this.button20.Tag = "+-";
             this.button20.UseVisualStyleBackColor = false;
             this.button20.Click += new System.EventHandler(this.Operator_Click);
             // 
@@ -442,12 +445,29 @@
             this.btn_Exit.FlatAppearance.BorderSize = 0;
             this.btn_Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Exit.Image = ((System.Drawing.Image)(resources.GetObject("btn_Exit.Image")));
-            this.btn_Exit.Location = new System.Drawing.Point(394, 18);
+            this.btn_Exit.Location = new System.Drawing.Point(394, 10);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(28, 29);
             this.btn_Exit.TabIndex = 33;
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(323, 218);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 70);
+            this.button2.TabIndex = 34;
+            this.button2.Tag = "/";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.Operator_Click);
             // 
             // Form1
             // 
@@ -455,6 +475,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(434, 606);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Number0);
             this.Controls.Add(this.button18);
@@ -482,6 +503,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "v";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -513,5 +537,6 @@
         private Button button19;
         private Button button20;
         private Button btn_Exit;
+        private Button button2;
     }
 }
