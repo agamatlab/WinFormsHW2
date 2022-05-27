@@ -54,6 +54,9 @@
             this.button20 = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +94,7 @@
             this.tbox_Current.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.tbox_Current.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tbox_Current.ForeColor = System.Drawing.Color.White;
-            this.tbox_Current.Location = new System.Drawing.Point(12, 89);
+            this.tbox_Current.Location = new System.Drawing.Point(12, 83);
             this.tbox_Current.MaxLength = 32765;
             this.tbox_Current.Multiline = true;
             this.tbox_Current.Name = "tbox_Current";
@@ -106,7 +109,7 @@
             // lbl_Previous
             // 
             this.lbl_Previous.ForeColor = System.Drawing.Color.Silver;
-            this.lbl_Previous.Location = new System.Drawing.Point(12, 57);
+            this.lbl_Previous.Location = new System.Drawing.Point(12, 51);
             this.lbl_Previous.Name = "lbl_Previous";
             this.lbl_Previous.Size = new System.Drawing.Size(410, 26);
             this.lbl_Previous.TabIndex = 5;
@@ -469,12 +472,69 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.Operator_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(118, 173);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(100, 34);
+            this.button3.TabIndex = 35;
+            this.button3.Tag = "clearPrevious";
+            this.button3.Text = "CE";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.Operator_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(222, 173);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 34);
+            this.button5.TabIndex = 36;
+            this.button5.Tag = "clear";
+            this.button5.Text = "C";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.Operator_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(19)))));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(15, 172);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(100, 34);
+            this.button6.TabIndex = 37;
+            this.button6.Tag = "round";
+            this.button6.Text = "Round";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.Operator_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(434, 606);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Number0);
@@ -538,5 +598,8 @@
         private Button button20;
         private Button btn_Exit;
         private Button button2;
+        private Button button3;
+        private Button button5;
+        private Button button6;
     }
 }

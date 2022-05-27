@@ -91,7 +91,7 @@ namespace WinFormsHW2
             if(sender is Button btn)
             {
                 string currentOperator = btn.Tag.ToString();
-                if (currentOperator == "0" && lbl_Previous.Text == String.Empty)
+                if (currentOperator == "=" && lbl_Previous.Text == String.Empty)
                     return;
 
                 if (newOperation)
@@ -113,9 +113,23 @@ namespace WinFormsHW2
                             tbox_Current.Text = tbox_Current.Text.Substring(0,
                                 tbox_Current.Text.Length - 1);
 
-                        if(tbox_Current.Text.Length > 1 && tbox_Current.Text.Last() == ',')
+                        char lastChar = tbox_Current.Text.Last();
+                        if ((lastChar == ',' || lastChar == '-'))
                             goto case "del";
 
+                        return;
+                    case "round":
+                        tbox_Current.Text = Math.Round(Convert.ToDecimal(tbox_Current.Text), 2).ToString();
+                        return;
+                    case "clearPrevious":
+                        lbl_Previous.Text = "";
+                        tbox_Current.Text = "0";
+                        newOperation = false;
+                        newNumber = false;
+                        return;
+                    case "clear":
+                        tbox_Current.Text = "0";
+                        newNumber = false;
                         return;
                     case "²":
                         tbox_Current.Text = Convert.ToString(current* current);
@@ -164,8 +178,6 @@ namespace WinFormsHW2
                     if(current == 0 && amount[1] == "/")
                     {
                         MessageBox.Show("Can not devide 0...");
-                        newOperation = true;
-                        newNumber = true;
                         return;
                     }
 
@@ -203,9 +215,9 @@ namespace WinFormsHW2
 
                     lbl_Previous.Text += ' ' + currentOperator;
                     tbox_Current.Text = result.ToString();
-                    newNumber = true;
                 } 
 
+                newNumber = true;
 
             }
         }
