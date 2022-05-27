@@ -100,9 +100,7 @@ namespace WinFormsHW2
                     newOperation = false;
                 }
 
-                decimal current = default;
-
-                current = Convert.ToDecimal(tbox_Current.Text.Replace(",", String.Empty));
+                decimal current = current = Convert.ToDecimal(tbox_Current.Text.Replace(",", String.Empty));
 
                 switch (currentOperator)
                 {
@@ -161,8 +159,6 @@ namespace WinFormsHW2
                             tbox_Current.Text = tbox_Current.Text.Insert(0, "-");
 
                         return;
-                    default:
-                        break;
                 }
 
                 //if (newNumber) return;
